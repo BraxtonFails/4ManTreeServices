@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | 4Man Tree Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="4ManTreeServices.ico">
+    <script>
+        // Error handling
+        window.addEventListener('error', function(e) {
+            console.error('Page error:', e.error);
+        });
+        
+        // Ensure DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+            // Initialize mobile menu
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-brandbeige">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+                <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
+                <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
+                <a href="index.html#about" class="hover:text-rustorange transition px-2 py-1 text-white">About</a>
+                <a href="services.html" class="hover:text-rustorange transition px-2 py-1 text-white border-b-2 border-rustorange">Services</a>
+                <a href="index.html#gallery" class="hover:text-rustorange transition px-2 py-1 text-white">Gallery</a>
+                <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white">Reviews</a>
+                <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl text-rustorange"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-deepbrown">
+            <a href="index.html#about" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
+            <a href="index.html#gallery" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
+            <a href="index.html#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-brandbrown/90 to-brandburntorange/70">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">Our Services</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">Comprehensive tree care solutions for your home or business. From routine maintenance to emergency services, we've got you covered.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Services Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Tree Removal -->
+            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-green-800 mb-4">Tree Removal</h2>
+                        <p class="text-gray-600 mb-6">Our professional tree removal service is designed to safely and efficiently remove trees of any size from your property. We handle everything from small ornamental trees to large, complex removals.</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Complete tree removal with stump grinding</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Emergency tree removal services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Safe removal of hazardous trees</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Cleanup and debris removal included</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="before1.jpg" alt="Tree removal service" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Trimming -->
+            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-green-800 mb-4">Tree Trimming</h2>
+                        <p class="text-gray-600 mb-6">Keep your trees healthy and beautiful with our professional trimming services. We use proper pruning techniques to maintain tree health and enhance your property's appearance.</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Seasonal pruning and maintenance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Deadwood removal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Crown thinning and shaping</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Safety trimming for power lines</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="after1.jpg" alt="Tree trimming service" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stump Grinding -->
+            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-green-800 mb-4">Stump Grinding</h2>
+                        <p class="text-gray-600 mb-6">Remove unsightly stumps and prepare your property for new landscaping with our professional stump grinding service. We use advanced equipment to ensure a clean, level finish.</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Complete stump removal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Ground leveling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Debris cleanup included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Preparation for new landscaping</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="large-pile-up.jpg" alt="Stump grinding service" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storm Cleanup -->
+            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-green-800 mb-4">Storm Cleanup</h2>
+                        <p class="text-gray-600 mb-6">When severe weather strikes, we're here to help. Our emergency storm cleanup service quickly removes fallen trees and debris to restore your property's safety and appearance.</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>24/7 emergency response</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Fallen tree removal</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Debris cleanup</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Property restoration</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="before1.jpg" alt="Storm cleanup service" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mulch Service -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-green-800 mb-4">Mulch Service</h2>
+                        <p class="text-gray-600 mb-6">Enhance your landscape with our premium mulch delivery and installation service. We offer high-quality mulch that protects your plants and adds beauty to your property.</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Premium mulch delivery</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Professional installation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Various mulch types available</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span>Bulk delivery options</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="after1.jpg" alt="Mulch service" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-b from-brandburntorange/70 to-brandbrown/90">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">Contact us today for a free quote on any of our tree care services. We're here to help you maintain a beautiful and safe property.</p>
+            <a href="contact.html" class="inline-block bg-white hover:bg-gray-100 transition px-12 py-4 rounded-full text-xl font-bold text-rustorange shadow-lg">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepbrown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">4Man Tree Services</h3>
+                    <p class="text-white/80">Professional tree care services in Dayton, Ohio. Quality work, fair prices, and excellent customer service.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-white/80">Phone: (555) 123-4567</p>
+                    <p class="text-white/80">Email: info@4mantreeservices.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-rustorange transition">Home</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-rustorange transition">Services</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-rustorange transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2024 4Man Tree Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
