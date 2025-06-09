@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | 4Man Tree Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="4ManTreeServices.ico">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2410c;
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a3412;
+        }
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #c2410c #f3f4f6;
+        }
+        /* Remove focus outline and add custom focus styles */
+        nav a:focus {
+            outline: none;
+        }
+        nav a:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-brandbeige">
+    <!-- Glassy Navbar -->
+    <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
+            <a href="index.html#home" class="flex items-center space-x-3 hover:opacity-90 transition">
+                <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
+                <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
+                <a href="index.html#about" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">About</a>
+                <a href="index.html#services" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
+                <a href="index.html#gallery" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Gallery</a>
+                <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Reviews</a>
+                <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl text-rustorange"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-deepbrown">
+            <a href="index.html#about" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
+            <a href="index.html#services" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
+            <a href="index.html#gallery" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
+            <a href="index.html#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 min-h-screen">
+        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center w-full">
+            <div class="bg-white rounded-2xl shadow-2xl p-12 border-2 border-brandgreen/30">
+                <h2 class="text-3xl font-bold mb-8 text-brandbrown">Contact Us</h2>
+                <form class="space-y-8">
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-brandbrown mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-2 border-brandbrown/30 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-rustorange focus:ring-2 focus:ring-rustorange/20 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-brandbrown mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-2 border-brandbrown/30 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-rustorange focus:ring-2 focus:ring-rustorange/20 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-lg font-medium text-brandbrown mb-2">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-2 border-brandbrown/30 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-rustorange focus:ring-2 focus:ring-rustorange/20 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-brandbrown mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-2 border-brandbrown/30 bg-white px-4 py-2 text-gray-900 shadow-sm focus:border-rustorange focus:ring-2 focus:ring-rustorange/20 focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-rustorange text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-orangehover transition duration-300">Send Message</button>
+                </form>
+            </div>
+            <div class="bg-brandorange/20 rounded-2xl p-8 shadow-lg border-2 border-brandburntorange/40">
+                <h3 class="text-2xl font-semibold mb-4 text-brandburntorange">Business Info</h3>
+                <ul class="space-y-3 text-lg">
+                    <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandgreen mr-3"></i>Dayton, Ohio</li>
+                    <li class="flex items-center"><i class="fas fa-phone-alt text-brandgreen mr-3"></i>+1 (937) 234-7945</li>
+                    <li class="flex items-center"><i class="fas fa-envelope text-brandgreen mr-3"></i>4mantreeservices@gmail.com</li>
+                    <li class="flex items-center"><i class="fab fa-facebook text-brandgreen mr-3"></i><a href="https://facebook.com/4mantreeservices" target="_blank" rel="noopener" class="underline hover:text-brandburntorange">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-20 mt-32 border-t border-green-900">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">4Man Tree Services</h3>
+                <p class="text-gray-400">Professional tree care services in Dayton, Ohio.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html#home" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="index.html#about" class="text-gray-400 hover:text-white">About</a></li>
+                    <li><a href="index.html#services" class="text-gray-400 hover:text-white">Services</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white font-bold underline">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61561085784443" target="_blank" rel="noopener" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-green-900 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 4Man Tree Services. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+    <noscript>
+        <div style="background: #fee; color: #900; padding: 2rem; text-align: center; font-size: 1.5rem;">
+            JavaScript is required for this page. If you see a blank page, please enable JavaScript or check for script errors.
+        </div>
+    </noscript>
+</body>
+</html> 

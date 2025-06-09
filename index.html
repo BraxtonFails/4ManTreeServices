@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Man Tree Services | Professional Tree Care in Dayton, OH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="4ManTreeServices.ico">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(22,101,52,0.7),rgba(22,101,52,0.7)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .animate-scaleIn {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        /* Remove focus outline and add custom focus styles */
+        nav a:focus {
+            outline: none;
+        }
+        nav a:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2410c;
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a3412;
+        }
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #c2410c #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-brandbeige">
+    <!-- Glassy Navbar -->
+    <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
+            <a href="#home" class="flex items-center space-x-3 hover:opacity-90 transition">
+                <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
+                <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
+                <a href="#about" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">About</a>
+                <a href="#services" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
+                <a href="#gallery" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Gallery</a>
+                <a href="#reviews" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Reviews</a>
+                <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl text-rustorange"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-deepbrown">
+            <a href="#about" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
+            <a href="#services" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
+            <a href="#gallery" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
+            <a href="#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
+        </div>
+    </nav>
+    <div class="h-20"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative border-b-4 border-brandbrown">
+        <div class="absolute inset-0 bg-gradient-to-b from-brandbrown/90 to-brandburntorange/70"></div>
+        <div class="relative z-10 text-center text-brandbeige max-w-3xl mx-auto px-4 flex flex-col items-center justify-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 drop-shadow-lg leading-tight animate-fadeInUp">Professional Tree Care in Dayton</h1>
+            <p class="text-2xl md:text-2xl font-medium mb-12 drop-shadow max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 0.2s">Reliable, safe, and efficient tree services for your home or business.<br>Founded by a young entrepreneur passionate about quality tree care.</p>
+            <a href="contact.html" class="inline-block bg-rustorange hover:bg-orangehover transition px-12 py-5 rounded-full text-2xl font-extrabold shadow-xl tracking-wide uppercase text-white animate-fadeInUp" style="animation-delay: 0.4s">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-36 bg-green-50 border-b border-green-100">
+        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div class="animate-fadeInUp">
+                <h2 class="text-4xl font-bold mb-6 text-green-800">About Us</h2>
+                <p class="text-lg text-gray-700 mb-4">Hey, we're Caleb Merver (22) and Maddox Fourman (19) — cousins and co-founders of 4Man Tree Services. We're both proud to call Dayton, Ohio our hometown.</p>
+                <p class="text-lg text-gray-700 mb-4">We started this business in June 2024 with a simple goal: to provide high-quality, reliable tree care with a level of dedication you don't always see. Whether it's tree removal, trimming, stump grinding, or emergency cleanup, we treat every job like it's in our own backyard.</p>
+                <p class="text-lg text-gray-700 mb-4">As a young crew with big ambition, we bring fresh energy, modern tools, and a strong work ethic to every project. We take pride in helping our neighbors keep their properties safe, clean, and looking great.</p>
+                <p class="text-lg text-gray-700 mb-4">Thanks for checking us out — we'd love the chance to earn your trust and your business.</p>
+                <p class="text-lg font-semibold text-green-800">— Caleb & Maddox<br>4Man Tree Services</p>
+            </div>
+            <div class="bg-green-50 rounded-2xl p-8 shadow-lg animate-scaleIn">
+                <img src="2-man-pose.jpg" alt="Caleb and Maddox of 4Man Tree Services" class="w-full h-auto rounded-xl shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-36 bg-white border-b border-green-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-green-800 mb-14 animate-fadeInUp">Our Services</h2>
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center service-card animate-fadeInUp" style="animation-delay: 0.1s">
+                    <i class="fas fa-tree text-5xl text-green-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Tree Removal</h3>
+                    <p class="text-gray-600 text-center">Safe and efficient tree removal for any size project, from small ornamentals to large, complex removals.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center service-card animate-fadeInUp" style="animation-delay: 0.2s">
+                    <i class="fas fa-cut text-5xl text-green-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Tree Trimming</h3>
+                    <p class="text-gray-600 text-center">Professional pruning and maintenance to keep your trees healthy and beautiful all year round.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center service-card animate-fadeInUp" style="animation-delay: 0.3s">
+                    <i class="fas fa-cogs text-5xl text-green-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Stump Grinding</h3>
+                    <p class="text-gray-600 text-center">Complete stump removal and ground leveling with advanced equipment for a clean finish.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center service-card animate-fadeInUp" style="animation-delay: 0.4s">
+                    <i class="fas fa-bolt text-5xl text-green-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Storm Cleanup</h3>
+                    <p class="text-gray-600 text-center">Professional storm damage cleanup and tree removal. We'll help restore your property after severe weather.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-36 bg-brandbeige border-b border-brandbrown relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-brandbrown/10 to-brandburntorange/10"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-bold text-center text-green-800 mb-14 animate-fadeInUp">Our Work</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg animate-fadeInUp group" style="animation-delay: 0.1s">
+                    <div class="relative aspect-w-4 aspect-h-3">
+                        <img src="before1.jpg" alt="Before tree removal" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brandbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-white text-lg font-semibold">Before: Large tree removal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg animate-fadeInUp group" style="animation-delay: 0.2s">
+                    <div class="relative aspect-w-4 aspect-h-3">
+                        <img src="after1.jpg" alt="After tree removal" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brandbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-white text-lg font-semibold">After: Clean property ready for new landscaping</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg animate-fadeInUp group" style="animation-delay: 0.3s">
+                    <div class="relative aspect-w-4 aspect-h-3">
+                        <img src="large-pile-up.jpg" alt="Large tree debris cleanup" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brandbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-white text-lg font-semibold">Professional debris cleanup and removal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-36 bg-white border-b border-brandbrown relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-brandbeige/50 to-white"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-bold text-center text-green-800 mb-8 animate-fadeInUp">Real People, Real Reviews</h2>
+                <a href="contact.html" class="inline-block bg-rustorange hover:bg-orangehover transition px-12 py-4 rounded-full text-xl font-bold shadow-lg tracking-wide text-white animate-fadeInUp">Get Your Free Quote Today</a>
+            </div>
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white rounded-2xl shadow-lg p-8 testimonial-card flex flex-col items-center animate-fadeInUp border border-brandbrown/20" style="animation-delay: 0.1s">
+                    <div class="flex items-center mb-4">
+                        <div class="text-rustorange text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="text-brandbrown mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-20"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-center">"Professional, efficient, reasonably priced, and friendly. Highly recommended for your small to medium tree work."</p>
+                    <p class="font-semibold text-green-800">- Tom Westendorf</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 testimonial-card flex flex-col items-center animate-fadeInUp border border-brandbrown/20" style="animation-delay: 0.2s">
+                    <div class="flex items-center mb-4">
+                        <div class="text-rustorange text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="text-brandbrown mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-20"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-center">"They gave me a quote and then came out this evening to cut a small tree that was damaged from the storm. They were very efficient and cleaned up all the debris and stacked all the wood they cut. They are very responsible young men. I would highly recommend their services."</p>
+                    <p class="font-semibold text-green-800">- Sheila Moyer Kouse</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 testimonial-card flex flex-col items-center animate-fadeInUp border border-brandbrown/20" style="animation-delay: 0.3s">
+                    <div class="flex items-center mb-4">
+                        <div class="text-rustorange text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="text-brandbrown mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-20"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-center">"I had 4 Man Tree Service out today they cut down all my bushes in front of my. They cleaned everything up afterwards. They hauled it all away. Priced is reasonable. Very happy. A job well done. Thank You!"</p>
+                    <p class="font-semibold text-green-800">- Sharon Jasinski Griffin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-12 mt-32 border-t border-green-900">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+            <div>
+                <h3 class="text-lg font-bold mb-2">4Man Tree Services</h3>
+                <p class="text-gray-400 text-sm">Professional tree care services in Dayton, Ohio.</p>
+                <div class="mt-2 space-y-1">
+                    <p class="text-gray-400 text-sm"><i class="fas fa-phone-alt mr-2"></i>+1 (937) 234-7945</p>
+                    <p class="text-gray-400 text-sm"><i class="fas fa-envelope mr-2"></i>4mantreeservices@gmail.com</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-2">Quick Links</h3>
+                <ul class="space-y-1">
+                    <li><a href="#home" class="text-gray-400 hover:text-white text-sm">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white text-sm">About</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white text-sm">Services</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-2">Connect With Us</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61561085784443" target="_blank" rel="noopener" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-green-900 mt-6 pt-4 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 4Man Tree Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Scroll animations for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            document.querySelectorAll('section').forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html> 
