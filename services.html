@@ -18,6 +18,7 @@
         // Ensure DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded successfully');
+            
             // Initialize mobile menu
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
             const mobileMenu = document.querySelector('.mobile-menu');
@@ -27,6 +28,18 @@
                     mobileMenu.classList.toggle('hidden');
                 });
             }
+
+            // Simple fade-in animation for sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transition = 'opacity 0.5s ease-in-out';
+                
+                // Stagger the animations
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                }, 100 * index);
+            });
         });
     </script>
     <style>
@@ -35,6 +48,60 @@
             background: rgba(255,255,255,0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+        }
+        section {
+            opacity: 1 !important; /* Force sections to be visible */
+        }
+        .slideshow-container {
+            overflow: hidden;
+        }
+        .slideshow-wrapper {
+            position: relative;
+        }
+        .slideshow-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slideshow-image.active {
+            opacity: 1;
+            position: relative;
+        }
+        .slideshow-container-tree {
+            overflow: hidden;
+        }
+        .slideshow-wrapper-tree {
+            position: relative;
+        }
+        .slideshow-image-tree {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slideshow-image-tree.active {
+            opacity: 1;
+            position: relative;
+        }
+        .slideshow-container-trim {
+            overflow: hidden;
+        }
+        .slideshow-wrapper-trim {
+            position: relative;
+        }
+        .slideshow-image-trim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slideshow-image-trim.active {
+            opacity: 1;
+            position: relative;
         }
     </style>
 </head>
@@ -105,8 +172,19 @@
                         </ul>
                         <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
                     </div>
-                    <div class="md:w-1/2">
-                        <img src="before1.jpg" alt="Tree removal service" class="w-full h-full object-cover">
+                    <div class="md:w-1/2 relative flex items-center justify-center">
+                        <div class="slideshow-container-tree relative h-96 w-full max-w-xl">
+                            <div class="slideshow-wrapper-tree h-96 w-full">
+                                <img src="before1.jpg" alt="Tree removal before" class="w-full h-full object-cover rounded-2xl slideshow-image-tree active">
+                                <img src="after1.jpg" alt="Tree removal after" class="w-full h-full object-cover rounded-2xl slideshow-image-tree">
+                            </div>
+                            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition" onclick="changeTreeSlide(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition" onclick="changeTreeSlide(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,8 +215,19 @@
                         </ul>
                         <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
                     </div>
-                    <div class="md:w-1/2">
-                        <img src="after1.jpg" alt="Tree trimming service" class="w-full h-full object-cover">
+                    <div class="md:w-1/2 relative flex items-center justify-center">
+                        <div class="slideshow-container-trim relative h-96 w-full max-w-xl">
+                            <div class="slideshow-wrapper-trim h-96 w-full">
+                                <img src="trim-before.jpg" alt="Tree trimming before" class="w-full h-full object-cover rounded-2xl slideshow-image-trim active">
+                                <img src="trim-after.jpg" alt="Tree trimming after" class="w-full h-full object-cover rounded-2xl slideshow-image-trim">
+                            </div>
+                            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition" onclick="changeTrimSlide(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition" onclick="changeTrimSlide(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -169,8 +258,10 @@
                         </ul>
                         <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
                     </div>
-                    <div class="md:w-1/2">
-                        <img src="large-pile-up.jpg" alt="Stump grinding service" class="w-full h-full object-cover">
+                    <div class="md:w-1/2 relative flex items-center justify-center">
+                        <div class="h-96 w-full max-w-xl flex items-center justify-center">
+                            <img src="stump-clearing.png" alt="Stump grinding service" class="w-full h-full object-cover rounded-2xl">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,7 +275,7 @@
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                                <span>24/7 emergency response</span>
+                                <span>Fast response time</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
@@ -201,8 +292,10 @@
                         </ul>
                         <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
                     </div>
-                    <div class="md:w-1/2">
-                        <img src="before1.jpg" alt="Storm cleanup service" class="w-full h-full object-cover">
+                    <div class="md:w-1/2 relative flex items-center justify-center">
+                        <div class="h-96 w-full max-w-xl flex items-center justify-center">
+                            <img src="large-pile-up.jpg" alt="Storm cleanup service" class="w-full h-full object-cover rounded-2xl">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,8 +326,20 @@
                         </ul>
                         <a href="contact.html" class="inline-block mt-8 bg-rustorange hover:bg-orangehover transition px-8 py-3 rounded-full text-lg font-semibold text-white">Get a Quote</a>
                     </div>
-                    <div class="md:w-1/2">
-                        <img src="after1.jpg" alt="Mulch service" class="w-full h-full object-cover">
+                    <div class="md:w-1/2 relative flex items-center justify-center">
+                        <div class="slideshow-container relative h-96 w-full max-w-xl">
+                            <div class="slideshow-wrapper h-96 w-full">
+                                <img src="mulch1.JPG" alt="Mulch service example 1" class="w-full h-full object-cover rounded-2xl slideshow-image active">
+                                <img src="mulch2.JPG" alt="Mulch service example 2" class="w-full h-full object-cover rounded-2xl slideshow-image">
+                                <img src="mulch3.JPG" alt="Mulch service example 3" class="w-full h-full object-cover rounded-2xl slideshow-image">
+                            </div>
+                            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition" onclick="changeSlide(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition" onclick="changeSlide(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,5 +382,70 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slideshow-image');
+
+        // Add image loading check
+        window.addEventListener('load', function() {
+            console.log('Window loaded, checking images...');
+            slides.forEach((slide, index) => {
+                console.log(`Checking image ${index + 1}:`, slide.src);
+                if (!slide.complete) {
+                    console.log(`Image ${index + 1} not loaded yet`);
+                }
+            });
+        });
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Initialize first slide
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing slideshow...');
+            showSlide(0);
+        });
+
+        // Tree Removal slideshow
+        let currentTreeSlide = 0;
+        const treeSlides = document.querySelectorAll('.slideshow-image-tree');
+        function showTreeSlide(index) {
+            treeSlides.forEach(slide => slide.classList.remove('active'));
+            currentTreeSlide = (index + treeSlides.length) % treeSlides.length;
+            treeSlides[currentTreeSlide].classList.add('active');
+        }
+        function changeTreeSlide(direction) {
+            showTreeSlide(currentTreeSlide + direction);
+        }
+        setInterval(() => { changeTreeSlide(1); }, 5000);
+        document.addEventListener('DOMContentLoaded', function() { showTreeSlide(0); });
+
+        // Tree Trimming slideshow
+        let currentTrimSlide = 0;
+        const trimSlides = document.querySelectorAll('.slideshow-image-trim');
+        function showTrimSlide(index) {
+            trimSlides.forEach(slide => slide.classList.remove('active'));
+            currentTrimSlide = (index + trimSlides.length) % trimSlides.length;
+            trimSlides[currentTrimSlide].classList.add('active');
+        }
+        function changeTrimSlide(direction) {
+            showTrimSlide(currentTrimSlide + direction);
+        }
+        setInterval(() => { changeTrimSlide(1); }, 5000);
+        document.addEventListener('DOMContentLoaded', function() { showTrimSlide(0); });
+    </script>
 </body>
 </html> 
