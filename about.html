@@ -81,15 +81,15 @@
     </style>
 </head>
 <body class="bg-brandbeige">
-    <!-- Glassy Navbar -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
-            <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+            <a href="index.html" class="logo-container flex items-center space-x-3 hover:opacity-90 transition">
                 <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
                 <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
             </a>
             <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
-                <a href="about.html" class="hover:text-rustorange transition px-2 py-1 text-white border-b-2 border-rustorange">About</a>
+                <a href="about.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">About</a>
                 <a href="services.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
                 <a href="gallery.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Gallery</a>
                 <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Reviews</a>
@@ -102,42 +102,113 @@
             </div>
         </div>
         <div class="mobile-menu hidden md:hidden bg-deepbrown">
-            <a href="about.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors border-b-2 border-rustorange">About</a>
+            <a href="about.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
             <a href="services.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
             <a href="gallery.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
             <a href="index.html#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
             <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
         </div>
     </nav>
-    <div class="h-20"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 hero-bg">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">Our Story</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">Two cousins, one mission: providing exceptional tree care services to our Dayton community.</p>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section class="py-36 bg-green-50 border-b border-green-100">
-        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6 text-green-800">About Us</h2>
-                <p class="text-lg text-gray-700 mb-4">Hey, we're Caleb and Maddox — cousins and co-founders of 4Man Tree Services. We're both proud to call Dayton, Ohio our hometown.</p>
-                <p class="text-lg text-gray-700 mb-4">We started this business in June 2024 with a simple goal: to provide high-quality, reliable tree care with a level of dedication you don't always see. Whether it's tree removal, trimming, stump grinding, or emergency cleanup, we treat every job like it's in our own backyard.</p>
-                <p class="text-lg text-gray-700 mb-4">As a young crew with big ambition, we bring fresh energy, modern tools, and a strong work ethic to every project. We take pride in helping our neighbors keep their properties safe, clean, and looking great.</p>
-                <p class="text-lg text-gray-700 mb-4">Thanks for checking us out — we'd love the chance to earn your trust and your business.</p>
-                <p class="text-lg font-semibold text-green-800">— Caleb & Maddox<br>4Man Tree Services</p>
-            </div>
-            <div class="bg-green-50 rounded-2xl p-8 shadow-lg">
-                <img src="2-man-pose.jpg" alt="Caleb and Maddox of 4Man Tree Services" class="w-full h-auto rounded-xl shadow-md">
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h2 class="text-4xl font-bold mb-6 text-green-800">About Us</h2>
+                    <p class="text-lg text-gray-700 mb-4">Hey, we're Caleb and Maddox — cousins and co-founders of 4Man Tree Services. We're both proud to call Dayton, Ohio our hometown.</p>
+                    <p class="text-lg text-gray-700 mb-4">We started this business in June 2024 with a simple goal: to provide high-quality, reliable tree care with a level of dedication you don't always see. Whether it's tree removal, trimming, stump grinding, or emergency cleanup, we treat every job like it's in our own backyard.</p>
+                    <p class="text-lg text-gray-700 mb-4">As a young crew with big ambition, we bring fresh energy, modern tools, and a strong work ethic to every project. We take pride in helping our neighbors keep their properties safe, clean, and looking great.</p>
+                    <p class="text-lg text-gray-700 mb-4">Thanks for checking us out — we'd love the chance to earn your trust and your business.</p>
+                    <p class="text-lg font-semibold text-green-800">— Caleb & Maddox<br>4Man Tree Services</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-rustorange/20 rounded-2xl transform rotate-3"></div>
+                    <img src="2-man-pose.jpg" alt="Caleb and Maddox of 4Man Tree Services" class="relative w-full h-auto rounded-2xl shadow-lg">
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gradient-to-b from-green-50 to-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-green-800 mb-16">Our Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-rustorange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl text-rustorange"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-4">Passion</h3>
+                    <p class="text-gray-600">We love what we do and it shows in our work. Every tree we care for gets our full attention and dedication.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-rustorange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-3xl text-rustorange"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-4">Safety First</h3>
+                    <p class="text-gray-600">Your safety and the safety of your property is our top priority. We follow strict safety protocols on every job.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-rustorange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-3xl text-rustorange"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-4">Integrity</h3>
+                    <p class="text-gray-600">We believe in honest pricing, clear communication, and doing what's right for our customers every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-b from-brandburntorange/70 to-brandbrown/90">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Work With Us?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">Let's discuss how we can help with your tree care needs. We're just a call or click away.</p>
+            <a href="contact.html" class="inline-block bg-white hover:bg-gray-100 transition px-12 py-4 rounded-full text-xl font-bold text-rustorange shadow-lg">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepbrown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">4Man Tree Services</h3>
+                    <p class="text-white/80">Professional tree care services in Dayton, Ohio. Quality work, fair prices, and excellent customer service.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-white/80">Phone: (937) 234-7945</p>
+                    <p class="text-white/80">Email: 4mantreeservices@gmail.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-rustorange transition">Home</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-rustorange transition">Services</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-rustorange transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2024 4Man Tree Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-button').addEventListener('click', function() {
             document.querySelector('.mobile-menu').classList.toggle('hidden');
-        });
-
-        // Ensure the About link is highlighted on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const aboutLink = document.querySelector('a[href="about.html"]');
-            if (aboutLink) {
-                aboutLink.classList.add('border-b-2', 'border-rustorange');
-            }
         });
 
         // Force page to stay visible

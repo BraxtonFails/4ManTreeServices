@@ -1,5 +1,18 @@
 /* Custom styles and animations */
 
+/* Logo hover animation */
+.logo-container {
+    position: relative;
+}
+
+.logo-container img {
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover img {
+    transform: rotate(5deg);
+}
+
 /* Smooth transitions */
 .transition {
     transition: all 0.3s ease-in-out;
@@ -261,4 +274,19 @@ nav a:focus-visible {
         text-decoration: none;
         color: black;
     }
+}
+
+/* Custom styles and animations */
+
+/* Logo hover animation */
+.logo-container {
+    position: relative;
+}
+
+.logo-container::before {
+    display: none;
+}
+
+.logo-container:hover::before {
+    display: none;
 } 
