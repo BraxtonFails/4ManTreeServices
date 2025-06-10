@@ -93,6 +93,34 @@
                 section.style.opacity = '1';
                 section.style.transition = 'none';
             });
+
+            // Get all links that point to sections on this page
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Get the header height and window height
+                        const headerOffset = 500; // Significantly increased to ensure content is visible
+                        const windowHeight = window.innerHeight;
+                        const elementHeight = targetElement.offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        
+                        // Calculate position to center the element in the viewport
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - (windowHeight - elementHeight) / 2;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
 
         // Error handling
@@ -201,6 +229,11 @@
             scrollbar-width: thin;
             scrollbar-color: #D35400 #f1f1f1;
         }
+
+        /* Add scroll padding to account for fixed header */
+        html {
+            scroll-padding-top: 120px;
+        }
     </style>
 </head>
 <body class="bg-brandbeige">
@@ -248,7 +281,7 @@
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-4">
             <!-- Stump Removal -->
-            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div id="stump-grinding" class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden scroll-mt-96">
                 <div class="md:flex">
                     <div class="md:w-1/2 p-8 md:p-12">
                         <h2 class="text-3xl font-bold text-green-800 mb-4">Stump Removal</h2>
@@ -282,7 +315,7 @@
             </div>
 
             <!-- Tree Removal -->
-            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div id="tree-removal" class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden scroll-mt-96">
                 <div class="md:flex">
                     <div class="md:w-1/2 p-8 md:p-12">
                         <h2 class="text-3xl font-bold text-green-800 mb-4">Tree Removal</h2>
@@ -325,7 +358,7 @@
             </div>
 
             <!-- Tree Trimming -->
-            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div id="tree-trimming" class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden scroll-mt-96">
                 <div class="md:flex flex-row-reverse">
                     <div class="md:w-1/2 p-8 md:p-12">
                         <h2 class="text-3xl font-bold text-green-800 mb-4">Tree Trimming</h2>
@@ -368,7 +401,7 @@
             </div>
 
             <!-- Storm Cleanup -->
-            <div class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div id="storm-cleanup" class="mb-20 bg-white rounded-2xl shadow-lg overflow-hidden scroll-mt-96">
                 <div class="md:flex flex-row-reverse">
                     <div class="md:w-1/2 p-8 md:p-12">
                         <h2 class="text-3xl font-bold text-green-800 mb-4">Storm Cleanup</h2>
@@ -402,7 +435,7 @@
             </div>
 
             <!-- Mulch Service -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div id="mulch-service" class="bg-white rounded-2xl shadow-lg overflow-hidden scroll-mt-96">
                 <div class="md:flex">
                     <div class="md:w-1/2 p-8 md:p-12">
                         <h2 class="text-3xl font-bold text-green-800 mb-4">Mulch Service</h2>
