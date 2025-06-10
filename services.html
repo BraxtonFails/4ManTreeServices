@@ -10,14 +10,69 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="4ManTreeServices.ico">
     <script>
-        // Error handling
-        window.addEventListener('error', function(e) {
-            console.error('Page error:', e.error);
-        });
-        
-        // Ensure DOM is loaded
+        // Initialize all slideshows
+        function initializeSlideshows() {
+            // Main mulch slideshow
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slideshow-image');
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                currentSlide = (index + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            function changeSlide(direction) {
+                showSlide(currentSlide + direction);
+            }
+
+            // Tree Removal slideshow
+            let currentTreeSlide = 0;
+            const treeSlides = document.querySelectorAll('.slideshow-image-tree');
+            
+            function showTreeSlide(index) {
+                treeSlides.forEach(slide => slide.classList.remove('active'));
+                currentTreeSlide = (index + treeSlides.length) % treeSlides.length;
+                treeSlides[currentTreeSlide].classList.add('active');
+            }
+
+            function changeTreeSlide(direction) {
+                showTreeSlide(currentTreeSlide + direction);
+            }
+
+            // Tree Trimming slideshow
+            let currentTrimSlide = 0;
+            const trimSlides = document.querySelectorAll('.slideshow-image-trim');
+            
+            function showTrimSlide(index) {
+                trimSlides.forEach(slide => slide.classList.remove('active'));
+                currentTrimSlide = (index + trimSlides.length) % trimSlides.length;
+                trimSlides[currentTrimSlide].classList.add('active');
+            }
+
+            function changeTrimSlide(direction) {
+                showTrimSlide(currentTrimSlide + direction);
+            }
+
+            // Initialize all slideshows
+            showSlide(0);
+            showTreeSlide(0);
+            showTrimSlide(0);
+
+            // Set up auto-advance for all slideshows
+            setInterval(() => changeSlide(1), 5000);
+            setInterval(() => changeTreeSlide(1), 5000);
+            setInterval(() => changeTrimSlide(1), 5000);
+
+            // Make functions globally available for button clicks
+            window.changeSlide = changeSlide;
+            window.changeTreeSlide = changeTreeSlide;
+            window.changeTrimSlide = changeTrimSlide;
+        }
+
+        // Initialize everything when the DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded successfully');
+            console.log('DOM loaded, initializing...');
             
             // Initialize mobile menu
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
@@ -29,21 +84,33 @@
                 });
             }
 
-            // Simple fade-in animation for sections
+            // Initialize slideshows
+            initializeSlideshows();
+
+            // Force all sections to be visible
             const sections = document.querySelectorAll('section');
-            sections.forEach((section, index) => {
-                section.style.opacity = '0';
-                section.style.transition = 'opacity 0.5s ease-in-out';
-                
-                // Stagger the animations
-                setTimeout(() => {
-                    section.style.opacity = '1';
-                }, 100 * index);
+            sections.forEach(section => {
+                section.style.opacity = '1';
+                section.style.transition = 'none';
             });
+        });
+
+        // Error handling
+        window.addEventListener('error', function(e) {
+            console.error('Page error:', e.error);
+        });
+
+        // Force page to stay visible
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'none';
         });
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            opacity: 1 !important; /* Force body to stay visible */
+        }
         .glass {
             background: rgba(255,255,255,0.7);
             backdrop-filter: blur(10px);
@@ -51,12 +118,15 @@
         }
         section {
             opacity: 1 !important; /* Force sections to be visible */
+            transition: none !important; /* Remove transitions that might cause issues */
         }
         .slideshow-container {
             overflow: hidden;
+            opacity: 1 !important;
         }
         .slideshow-wrapper {
             position: relative;
+            opacity: 1 !important;
         }
         .slideshow-image {
             position: absolute;
@@ -71,9 +141,11 @@
         }
         .slideshow-container-tree {
             overflow: hidden;
+            opacity: 1 !important;
         }
         .slideshow-wrapper-tree {
             position: relative;
+            opacity: 1 !important;
         }
         .slideshow-image-tree {
             position: absolute;
@@ -88,9 +160,11 @@
         }
         .slideshow-container-trim {
             overflow: hidden;
+            opacity: 1 !important;
         }
         .slideshow-wrapper-trim {
             position: relative;
+            opacity: 1 !important;
         }
         .slideshow-image-trim {
             position: absolute;
@@ -109,16 +183,16 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
-            <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+            <a href="#home" class="flex items-center space-x-3 hover:opacity-90 transition">
                 <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
                 <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
             </a>
             <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
-                <a href="index.html#about" class="hover:text-rustorange transition px-2 py-1 text-white">About</a>
-                <a href="services.html" class="hover:text-rustorange transition px-2 py-1 text-white border-b-2 border-rustorange">Services</a>
-                <a href="index.html#gallery" class="hover:text-rustorange transition px-2 py-1 text-white">Gallery</a>
-                <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white">Reviews</a>
-                <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white">Contact</a>
+                <a href="index.html#about" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">About</a>
+                <a href="services.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
+                <a href="gallery.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Gallery</a>
+                <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Reviews</a>
+                <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Contact</a>
             </div>
             <div class="md:hidden flex items-center">
                 <button class="mobile-menu-button">
@@ -129,7 +203,7 @@
         <div class="mobile-menu hidden md:hidden bg-deepbrown">
             <a href="index.html#about" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
             <a href="services.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
-            <a href="index.html#gallery" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
+            <a href="gallery.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
             <a href="index.html#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
             <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
         </div>
@@ -382,70 +456,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slideshow-image');
-
-        // Add image loading check
-        window.addEventListener('load', function() {
-            console.log('Window loaded, checking images...');
-            slides.forEach((slide, index) => {
-                console.log(`Checking image ${index + 1}:`, slide.src);
-                if (!slide.complete) {
-                    console.log(`Image ${index + 1} not loaded yet`);
-                }
-            });
-        });
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (index + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        // Auto-advance slides every 5 seconds
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
-
-        // Initialize first slide
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing slideshow...');
-            showSlide(0);
-        });
-
-        // Tree Removal slideshow
-        let currentTreeSlide = 0;
-        const treeSlides = document.querySelectorAll('.slideshow-image-tree');
-        function showTreeSlide(index) {
-            treeSlides.forEach(slide => slide.classList.remove('active'));
-            currentTreeSlide = (index + treeSlides.length) % treeSlides.length;
-            treeSlides[currentTreeSlide].classList.add('active');
-        }
-        function changeTreeSlide(direction) {
-            showTreeSlide(currentTreeSlide + direction);
-        }
-        setInterval(() => { changeTreeSlide(1); }, 5000);
-        document.addEventListener('DOMContentLoaded', function() { showTreeSlide(0); });
-
-        // Tree Trimming slideshow
-        let currentTrimSlide = 0;
-        const trimSlides = document.querySelectorAll('.slideshow-image-trim');
-        function showTrimSlide(index) {
-            trimSlides.forEach(slide => slide.classList.remove('active'));
-            currentTrimSlide = (index + trimSlides.length) % trimSlides.length;
-            trimSlides[currentTrimSlide].classList.add('active');
-        }
-        function changeTrimSlide(direction) {
-            showTrimSlide(currentTrimSlide + direction);
-        }
-        setInterval(() => { changeTrimSlide(1); }, 5000);
-        document.addEventListener('DOMContentLoaded', function() { showTrimSlide(0); });
-    </script>
 </body>
 </html> 

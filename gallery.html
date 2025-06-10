@@ -3,62 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | 4man Tree Services</title>
+    <title>Gallery | 4Man Tree Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="./dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="4manTreeServices.ico">
+    <link rel="icon" type="image/x-icon" href="4ManTreeServices.ico">
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            opacity: 1 !important;
+        }
         .glass {
             background: rgba(255,255,255,0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-        /* Custom Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        section {
+            opacity: 1 !important;
+            transition: none !important;
         }
-        .animate-fadeInUp {
-            animation: fadeInUp 0.6s ease-out forwards;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
         }
         .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease;
         }
         .gallery-item:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
         }
-        /* Remove focus outline and add custom focus styles */
-        nav a:focus {
-            outline: none;
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
-        nav a:focus-visible {
-            outline: 2px solid rgba(255, 255, 255, 0.5);
-            outline-offset: 2px;
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2410c;
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a3412;
+        }
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #c2410c #f3f4f6;
         }
     </style>
 </head>
 <body class="bg-brandbeige">
-    <!-- Glassy Navbar -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
             <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
-                <img src="4manTreeServicesLogo.jpg" alt="4man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
-                <span class="text-2xl font-extrabold text-rustorange tracking-tight">4man Tree Services</span>
+                <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
+                <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
             </a>
             <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
-                <a href="index.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Home</a>
-                <a href="index.html#about" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">About</a>
-                <a href="index.html#services" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
-                <a href="gallery.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Gallery</a>
+                <a href="about.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">About</a>
+                <a href="services.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
+                <a href="gallery.html" class="hover:text-rustorange transition px-2 py-1 text-white border-b-2 border-rustorange">Gallery</a>
                 <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Reviews</a>
                 <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Contact</a>
             </div>
@@ -69,107 +107,185 @@
             </div>
         </div>
         <div class="mobile-menu hidden md:hidden bg-deepbrown">
-            <a href="index.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Home</a>
-            <a href="index.html#about" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
-            <a href="index.html#services" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
-            <a href="gallery.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
+            <a href="about.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">About</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
+            <a href="gallery.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors border-b-2 border-rustorange">Gallery</a>
             <a href="index.html#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
             <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
         </div>
     </nav>
 
-    <div class="h-20"></div>
-
-    <!-- Gallery Header -->
-    <section class="py-20 bg-brandbrown/10">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-brandbrown/90 to-brandburntorange/70">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-green-800 mb-6 animate-fadeInUp">Our Work Gallery</h1>
-            <p class="text-xl text-gray-700 max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 0.2s">Take a look at some of our recent projects. From tree removal to storm cleanup, we handle every job with care and precision.</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">Our Work Gallery</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">Browse through our portfolio of completed projects. Click on any image to view it in full size.</p>
         </div>
     </section>
 
-    <!-- Gallery Grid -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Before/After Pairs -->
-                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg animate-fadeInUp">
-                    <div class="relative aspect-w-4 aspect-h-3">
-                        <img src="before1.jpg" alt="Before tree removal" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-lg font-semibold">Before: Large tree removal</p>
-                        </div>
+    <!-- Gallery Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="gallery-grid">
+                <!-- Tree Removal Before/After -->
+                <a href="gallery-images/before1.jpg" data-lightbox="gallery" data-title="Before: Large tree removal" class="gallery-item">
+                    <img src="gallery-images/before1.jpg" alt="Before tree removal">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Before: Large tree removal</h3>
                     </div>
-                </div>
-                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg animate-fadeInUp" style="animation-delay: 0.1s">
-                    <div class="relative aspect-w-4 aspect-h-3">
-                        <img src="after1.jpg" alt="After tree removal" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-lg font-semibold">After: Clean property ready for new landscaping</p>
-                        </div>
+                </a>
+                <a href="gallery-images/after1.jpg" data-lightbox="gallery" data-title="After: Clean property ready for new landscaping" class="gallery-item">
+                    <img src="gallery-images/after1.jpg" alt="After tree removal">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">After: Clean property ready for new landscaping</h3>
                     </div>
-                </div>
-                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg animate-fadeInUp" style="animation-delay: 0.2s">
-                    <div class="relative aspect-w-4 aspect-h-3">
-                        <img src="large-pile-up.jpg" alt="Large tree debris cleanup" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-lg font-semibold">Professional debris cleanup and removal</p>
-                        </div>
+                </a>
+
+                <!-- Tree Trimming Before/After -->
+                <a href="gallery-images/trim-before.jpg" data-lightbox="gallery" data-title="Before: Tree trimming and maintenance" class="gallery-item">
+                    <img src="gallery-images/trim-before.jpg" alt="Before tree trimming">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Before: Tree trimming and maintenance</h3>
                     </div>
-                </div>
-                <!-- Add more gallery items here as needed -->
+                </a>
+                <a href="gallery-images/trim-after.jpg" data-lightbox="gallery" data-title="After: Professionally trimmed and shaped" class="gallery-item">
+                    <img src="gallery-images/trim-after.jpg" alt="After tree trimming">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">After: Professionally trimmed and shaped</h3>
+                    </div>
+                </a>
+
+                <!-- Mulching Projects -->
+                <a href="gallery-images/mulch1.JPG" data-lightbox="gallery" data-title="Mulching project - Before" class="gallery-item">
+                    <img src="gallery-images/mulch1.JPG" alt="Mulching project before">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Mulching project - Before</h3>
+                    </div>
+                </a>
+                <a href="gallery-images/mulch2.JPG" data-lightbox="gallery" data-title="Mulching project - During" class="gallery-item">
+                    <img src="gallery-images/mulch2.JPG" alt="Mulching project during">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Mulching project - During</h3>
+                    </div>
+                </a>
+                <a href="gallery-images/mulch3.JPG" data-lightbox="gallery" data-title="Mulching project - After" class="gallery-item">
+                    <img src="gallery-images/mulch3.JPG" alt="Mulching project after">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Mulching project - After</h3>
+                    </div>
+                </a>
+
+                <!-- Bush Removal Before/After -->
+                <a href="gallery-images/before-bush-removal.jpg" data-lightbox="gallery" data-title="Before: Bush removal project" class="gallery-item">
+                    <img src="gallery-images/before-bush-removal.jpg" alt="Before bush removal">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Before: Bush removal project</h3>
+                    </div>
+                </a>
+                <a href="gallery-images/after-bush-removal.jpg" data-lightbox="gallery" data-title="After: Clean and clear property" class="gallery-item">
+                    <img src="gallery-images/after-bush-removal.jpg" alt="After bush removal">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">After: Clean and clear property</h3>
+                    </div>
+                </a>
+
+                <!-- Shredding Before/After -->
+                <a href="gallery-images/before-shredding.jpg" data-lightbox="gallery" data-title="Before: Tree debris ready for shredding" class="gallery-item">
+                    <img src="gallery-images/before-shredding.jpg" alt="Before shredding">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Before: Tree debris ready for shredding</h3>
+                    </div>
+                </a>
+                <a href="gallery-images/after-shredding.jpg" data-lightbox="gallery" data-title="After: Professional shredding complete" class="gallery-item">
+                    <img src="gallery-images/after-shredding.jpg" alt="After shredding">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">After: Professional shredding complete</h3>
+                    </div>
+                </a>
+
+                <!-- Stump Clearing -->
+                <a href="gallery-images/stump-clearing.png" data-lightbox="gallery" data-title="Professional stump clearing and removal" class="gallery-item">
+                    <img src="gallery-images/stump-clearing.png" alt="Stump clearing">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Professional stump clearing and removal</h3>
+                    </div>
+                </a>
+
+                <!-- Large Debris Cleanup -->
+                <a href="gallery-images/large-pile-up.jpg" data-lightbox="gallery" data-title="Professional debris cleanup and removal" class="gallery-item">
+                    <img src="gallery-images/large-pile-up.jpg" alt="Large tree debris cleanup">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Professional debris cleanup and removal</h3>
+                    </div>
+                </a>
+
+                <!-- Team Photos -->
+                <a href="gallery-images/maddox-tree-down.jpg" data-lightbox="gallery" data-title="Our team in action - Tree removal" class="gallery-item">
+                    <img src="gallery-images/maddox-tree-down.jpg" alt="Team member removing tree">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Our team in action - Tree removal</h3>
+                    </div>
+                </a>
+                <a href="gallery-images/maddox-and-caleb-back-of-shirts.jpg" data-lightbox="gallery" data-title="Our professional team" class="gallery-item">
+                    <img src="gallery-images/maddox-and-caleb-back-of-shirts.jpg" alt="Team members">
+                    <div class="gallery-caption">
+                        <h3 class="text-lg font-semibold">Our professional team</h3>
+                    </div>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-brandbrown/10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-green-800 mb-8">Ready to Transform Your Property?</h2>
-            <a href="contact.html" class="inline-block bg-rustorange hover:bg-orangehover transition px-12 py-4 rounded-full text-xl font-bold shadow-lg tracking-wide text-white">Get Your Free Quote Today</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-green-900 text-white py-12 mt-32 border-t border-green-900">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
-            <div>
-                <h3 class="text-lg font-bold mb-2">4man Tree Services</h3>
-                <p class="text-gray-400 text-sm">Professional tree care services in Dayton, Ohio.</p>
-                <div class="mt-2 space-y-1">
-                    <p class="text-gray-400 text-sm"><i class="fas fa-phone-alt mr-2"></i>+1 (937) 234-7945</p>
-                    <p class="text-gray-400 text-sm"><i class="fas fa-envelope mr-2"></i>4mantreeservices@gmail.com</p>
+    <footer class="bg-deepbrown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">4Man Tree Services</h3>
+                    <p class="text-white/80">Professional tree care services in Dayton, Ohio. Quality work, fair prices, and excellent customer service.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-white/80">Phone: (555) 123-4567</p>
+                    <p class="text-white/80">Email: info@4mantreeservices.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-rustorange transition">Home</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-rustorange transition">Services</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-rustorange transition">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <h3 class="text-lg font-bold mb-2">Quick Links</h3>
-                <ul class="space-y-1">
-                    <li><a href="index.html" class="text-gray-400 hover:text-white text-sm">Home</a></li>
-                    <li><a href="index.html#about" class="text-gray-400 hover:text-white text-sm">About</a></li>
-                    <li><a href="index.html#services" class="text-gray-400 hover:text-white text-sm">Services</a></li>
-                    <li><a href="contact.html" class="text-gray-400 hover:text-white text-sm">Contact</a></li>
-                </ul>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2024 4Man Tree Services. All rights reserved.</p>
             </div>
-            <div>
-                <h3 class="text-lg font-bold mb-2">Connect With Us</h3>
-                <div class="flex space-x-4">
-                    <a href="https://www.facebook.com/profile.php?id=61561085784443" target="_blank" rel="noopener" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-green-900 mt-6 pt-4 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 4man Tree Services. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     <script>
         // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Configure lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2',
+            'fadeDuration': 300,
+            'imageFadeDuration': 300
+        });
+
+        // Force page to stay visible
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'none';
         });
     </script>
 </body>

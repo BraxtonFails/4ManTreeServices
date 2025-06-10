@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | 4Man Tree Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="4ManTreeServices.ico">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif;
+            opacity: 1 !important;
+        }
+        .glass {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(22,101,52,0.7),rgba(22,101,52,0.7)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        section {
+            opacity: 1 !important;
+            transition: none !important;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        /* Remove focus outline and add custom focus styles */
+        nav a:focus {
+            outline: none;
+        }
+        nav a:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2410c;
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a3412;
+        }
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #c2410c #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-brandbeige">
+    <!-- Glassy Navbar -->
+    <nav class="fixed w-full z-50 shadow-lg bg-deepbrown/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition">
+                <img src="4manTreeServicesLogo.jpg" alt="4Man tree services logo" class="h-16 w-16 object-cover rounded-full shadow-md border-4 border-brandburntorange">
+                <span class="text-2xl font-extrabold text-rustorange tracking-tight">4Man Tree Services</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
+                <a href="about.html" class="hover:text-rustorange transition px-2 py-1 text-white border-b-2 border-rustorange">About</a>
+                <a href="services.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Services</a>
+                <a href="gallery.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Gallery</a>
+                <a href="index.html#reviews" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Reviews</a>
+                <a href="contact.html" class="hover:text-rustorange transition px-2 py-1 text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-rustorange after:transition-all after:duration-300">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl text-rustorange"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-deepbrown">
+            <a href="about.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors border-b-2 border-rustorange">About</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Services</a>
+            <a href="gallery.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Gallery</a>
+            <a href="index.html#reviews" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Reviews</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-rustorange/10 text-white transition-colors">Contact</a>
+        </div>
+    </nav>
+    <div class="h-20"></div>
+    <!-- About Section -->
+    <section class="py-36 bg-green-50 border-b border-green-100">
+        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 text-green-800">About Us</h2>
+                <p class="text-lg text-gray-700 mb-4">Hey, we're Caleb and Maddox — cousins and co-founders of 4Man Tree Services. We're both proud to call Dayton, Ohio our hometown.</p>
+                <p class="text-lg text-gray-700 mb-4">We started this business in June 2024 with a simple goal: to provide high-quality, reliable tree care with a level of dedication you don't always see. Whether it's tree removal, trimming, stump grinding, or emergency cleanup, we treat every job like it's in our own backyard.</p>
+                <p class="text-lg text-gray-700 mb-4">As a young crew with big ambition, we bring fresh energy, modern tools, and a strong work ethic to every project. We take pride in helping our neighbors keep their properties safe, clean, and looking great.</p>
+                <p class="text-lg text-gray-700 mb-4">Thanks for checking us out — we'd love the chance to earn your trust and your business.</p>
+                <p class="text-lg font-semibold text-green-800">— Caleb & Maddox<br>4Man Tree Services</p>
+            </div>
+            <div class="bg-green-50 rounded-2xl p-8 shadow-lg">
+                <img src="2-man-pose.jpg" alt="Caleb and Maddox of 4Man Tree Services" class="w-full h-auto rounded-xl shadow-md">
+            </div>
+        </div>
+    </section>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Ensure the About link is highlighted on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutLink = document.querySelector('a[href="about.html"]');
+            if (aboutLink) {
+                aboutLink.classList.add('border-b-2', 'border-rustorange');
+            }
+        });
+
+        // Force page to stay visible
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'none';
+        });
+    </script>
+</body>
+</html> 
