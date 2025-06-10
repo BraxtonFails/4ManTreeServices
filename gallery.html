@@ -83,6 +83,25 @@
             scrollbar-width: thin;
             scrollbar-color: #c2410c #f3f4f6;
         }
+        
+        /* Focus styles */
+        *:focus {
+            outline: none;
+        }
+        
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+        
+        nav a:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="bg-brandbeige">
